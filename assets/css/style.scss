@@ -1,0 +1,21 @@
+html {
+	scroll-behavior: smooth;
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	@apply bg-primary;
+}
+
+a {
+}
+
+button {
+	&:focus {
+		@apply outline-none;
+	}
+	&:active {
+		transform: translateY(2px);
+	}
+}

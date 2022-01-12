@@ -1,0 +1,31 @@
+@tailwind base;
+@tailwind components;
+
+  .btn {
+    @apply bg-primary text-white rounded-3xl p-4;
+  }
+  
+  @media (max-width: 1024px) {  
+    button {
+      @apply text-xs;
+    }
+    h3 {
+      @apply text-base;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    h2 {
+      @apply text-base;
+    }
+    h3 {
+      @apply text-sm;
+    }
+    p {
+      @apply text-xs;
+    }
+  }
+
+
+
+@tailwind utilities;
