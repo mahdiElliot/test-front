@@ -6,7 +6,7 @@ import { AxiosError } from 'axios'
 export const toastErrors = (ctx: Vue, e: AxiosError) => {
 	if (!e.response) {
 		if (!e.message || e.message === '')
-			ctx.$toast.error(ctx.$en.something_went_wrong(), '', {} as any)
+			ctx.$toast.error("something went wrong", '', {} as any)
 		else ctx.$toast.error(e.message, '', {} as any)
 	} else if (
 		!e.response.data ||
@@ -14,13 +14,13 @@ export const toastErrors = (ctx: Vue, e: AxiosError) => {
 		e.response.data.errors.length === 0
 	) {
 		if (!e.response.statusText || e.response.statusText === '')
-			ctx.$toast.error(ctx.$en.something_went_wrong(), '', {} as any)
+			ctx.$toast.error("something went wrong", '', {} as any)
 		else if (e.response.status === 400)
-			ctx.$toast.error(ctx.$en.bad_request(), '', {} as any)
+			ctx.$toast.error("bad request", '', {} as any)
 		else if (e.response.status === 403)
-			ctx.$toast.error(ctx.$en.login_error(), '', {} as any)
+			ctx.$toast.error("login error", '', {} as any)
 		else if (e.response.status === 500)
-			ctx.$toast.error(ctx.$en.server_error(), '', {} as any)
+			ctx.$toast.error(e.response.data.message, '', {} as any)
 		else ctx.$toast.error(e.response.statusText, '', {} as any)
 	} else {
 		Object.values(e.response.data?.errors).forEach((i: any) => {
