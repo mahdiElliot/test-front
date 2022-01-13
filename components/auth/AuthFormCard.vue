@@ -49,8 +49,8 @@
 				type="text"
 				label="Social Security number"
 				class="mt-4"
-				:value="data.socialSecurity"
-				@change="(v) => changeData('security', { socialSecurity: v })"
+				:value="data.SSN"
+				@change="(v) => changeData('security', { SSN: v })"
 				:validation="getValidation('security')"
 			/>
 			<TextInput
@@ -100,7 +100,7 @@ export const emptyData = {
 	captchaKey: '',
 	code: '',
 	mobile: '',
-	socialSecurity: '',
+	SSN: '',
 }
 
 export default Vue.extend({
@@ -249,7 +249,7 @@ export default Vue.extend({
 					error: 'must be equal to password',
 				})
 			}
-			if (this.showSocialSecurity && !this.data.socialSecurity) {
+			if (this.showSocialSecurity && !this.data.SSN) {
 				v = false
 				Vue.set(this.validations, 'security', {
 					invalid: true,

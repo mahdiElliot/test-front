@@ -1,3 +1,4 @@
 export default {
-    UsersUrl: () => '/users'
+    RegisterUrl: () => '/register',
+    LoginUrl: () => '/login'
 }

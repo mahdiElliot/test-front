@@ -41,10 +41,10 @@ export default Vue.extend({
 	methods: {
 		submit() {
 			this.$axios
-				.post(this.$apiUrl.UsersUrl(), this.data)
+				.post(this.$apiUrl.RegisterUrl(), this.data)
 				.then((response) => {
 					this.$toast.success(
-						`${response.data.username} saved successfully`,
+						`${response.data.message}.`,
 						'',
 						{} as any
 					)
@@ -55,3 +55,7 @@ export default Vue.extend({
 	},
 })
 </script>
+
+<style scoped>
+
+</style>

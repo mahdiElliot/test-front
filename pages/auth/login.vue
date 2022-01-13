@@ -11,6 +11,7 @@
 				showEmail
 				showPassword
 				v-model="data"
+				@submit="submit"
 				:secondValidations="{}"
 			/>
 		</AuthContainer>
@@ -34,6 +35,21 @@ export default Vue.extend({
 			data: {} as any,
 		}
 	},
-	methods: {},
+	methods: {
+		submit(){
+			this.$axios
+				.post(this.$apiUrl.LoginUrl(), this.data)
+				.then((response) => {
+					this.$toast.success(
+						`${response.data.username} signed in successfully`,
+						'',
+						{} as any
+					)
+					this.$router.replace(this.$routeUrl.PanelUrl())
+				}).catch(e => {
+					this.$toastErrors(this, e)
+				})
+		}
+	},
 })
 </script>
