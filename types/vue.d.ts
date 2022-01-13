@@ -5,7 +5,6 @@ import ApiUrl from '~/config/api-url'
 import { toastErrors } from '~/plugins/global'
 import { errorPage, fanum } from '~/plugins/global'
 import { NuxtCookies } from 'cookie-universal-nuxt'
-import EN from '~/config/en'
 import { VueIzitoast } from 'vue-izitoast'
 
 type Globals = {
@@ -16,7 +15,6 @@ type Globals = {
 	$axios: NuxtAxiosInstance
 	$toast: VueIzitoast
 	$cookies: NuxtCookies
-	$en: typeof EN
 	$fanum: typeof fanum
 }
 
