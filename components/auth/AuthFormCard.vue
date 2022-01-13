@@ -39,7 +39,7 @@
 				type="password"
 				label="confirm password"
 				class="mt-4"
-				:value="data.repassword"
+				:value="data.rePassword"
 				@change="(v) => changeData('repassword', { rePassword: v })"
 				:validation="getValidation('repassword')"
 			/>
