@@ -21,7 +21,6 @@
 import Vue from 'vue'
 import AuthContainer from '~/components/auth/AuthContainer.vue'
 import AuthFormCard from '~/components/auth/AuthFormCard.vue'
-import Container from '~/components/Container.vue'
 import TextInput from '~/components/utils/TextInput.vue'
 
 export default Vue.extend({
@@ -29,7 +28,6 @@ export default Vue.extend({
 		AuthContainer,
 		AuthFormCard,
 		TextInput,
-		Container,
 	},
 	data() {
 		return {
